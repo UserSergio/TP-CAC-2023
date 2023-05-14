@@ -26,7 +26,7 @@ body {
 
 .imagen-encontradas>img {
     width: 98%;
-    height: 350px;
+    height: auto;
     object-fit: cover;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
 }
@@ -327,6 +327,12 @@ footer {
         margin-bottom: 20px;
     }
 
+    .texto-encontradas {
+        text-align: center;
+        font-size: 12px;
+        /*font-family: Georgia, 'Times New Roman', Times, serif;*/
+    }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -400,6 +406,12 @@ footer {
 
     .titulo-final {
         font-size: 20px;
+    }
+
+    .texto-encontradas {
+        text-align: center;
+        font-size: 8px;
+        /*font-family: Georgia, 'Times New Roman', Times, serif;*/
     }
 }
 
