@@ -133,7 +133,7 @@
           </div>
           <div class="col-12">
             <label for="dateFile" class="form-label">Envie una foto de la mascota (JPG, JPEG, PNG)</label>
-            <input type="file" class="form-control" id="dateFile" accept=".png,.jpg,.jpeg">
+            <input type="file" class="form-control" id="dateFile" accept=".png,.jpg,.jpeg" required>
           </div>
 
           <div class="col-12">
@@ -151,12 +151,12 @@
       <div class="content-foo">
         <h4>Telefono</h4>
         <i class="fa fa-duotone fa-phone"></i>
-        <p>1234567890</p>
+        <p>1130712911</p>
       </div>
       <div class="content-foo">
         <h4>email</h4>
         <i class="fa-regular fa-envelope"></i>
-        <p>mascotas.perdidas@gmail.com</p>
+        <p>ing.s.roitman@gmail.com</p>
       </div>
       <div class="content-foo">
         <h4>Direccion</h4>
@@ -171,14 +171,50 @@
   function validateForm() {
     let valueNumber = document.querySelector("#phoneInput").value
     var phoneno = /^\d{10}$/;
-    if (valueNumber.match(phoneno)) {
-      return true;
-    }
-    else {
+    if (!valueNumber.match(phoneno)) {
       alert("Numero de telefono invalido");
       return false;
     }
 
+    // Verificar que el mail no esté vacio
+    let correo = document.querySelector("#emailInput").value
+    if (correo === "") {
+      alert("Necesitamos su dirección de email");
+      return false;
+    }
+
+    // Verificar que el nombre no esté vacio
+    let nombre = document.querySelector("#nameInput").value
+    if (nombre === "") {
+      alert("El nombre no puede estar vacío");
+      return false;
+    }
+
+    // Verificar si el nombre contiene solo caracteres alfabéticos y espacios
+    for (var i = 0; i < nombre.length; i++) {
+      var charCode = nombre.charCodeAt(i);
+      if (!((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode === 32)) {
+        alert("El campo 'nombre' solo puede contener caracteres alfabéticos y espacios.");
+        return false;
+      }
+    }
+
+    // Verificar seleccion de barrio
+    let lugar= document.getElementById("dateSelect").value;
+    if (lugar == "Seleccionar el Barrio") {
+      alert("Debe seleccionar un barrio");
+      return false;
+    }
+
+    // Verificar ingreso de fecha
+    let fecha= document.getElementById("dateInput").value;
+    esFecha = Date.parse(fecha)
+    if (isNaN(esFecha)) {
+      alert("Debe ingresar la fecha del evento");
+      return false;
+    }
+
+  return true;
 
   }
 </script>
