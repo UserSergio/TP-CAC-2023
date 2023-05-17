@@ -324,6 +324,7 @@ footer {
     /* Galeria */
     .imagen-sponsors {
         width: 45%;
+        height: 90%;
     }
 
     .cards {
@@ -375,11 +376,13 @@ footer {
     /* Galeria Sponsors */
     .imagen-sponsors {
         width: 95%;
+               
     }
 
     /* Que dicen */
     .cards .card {
         height: 450px;
+        width: 90%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -418,7 +421,20 @@ footer {
         font-size: 20px;
     }
 }
-
-iframe {
-    margin-left: 20%;
+.video-inf {
+    
+    height: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+    /* margin-left: 5%;
+    margin-right: 5%; */
+    position: relative;
 }
+.video-inf iframe {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	}
