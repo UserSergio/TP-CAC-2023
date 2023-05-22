@@ -36,7 +36,8 @@
       </svg></div>
   </header>
   <main>
-    <h2 class="titulo">Contacto</h2>
+    
+    <h2 class="titulo-Consulta">Contactos</h2>
     <body>
       <div class="container">
         <form class="row g-3 mt-3 pb-5" onsubmit="return validarFormulario()">
@@ -62,10 +63,11 @@
 
           <div class="col-12">
             <label for="mensaje_ingresado" class="form-label">Mensaje</label>
-            <textarea class="textarea" name="comentario_ingresado" id="comentario"
+            <textarea class="form-control" name="comentario_ingresado" id="comentario"
               placeholder="Ingrese su comentario (Máximo 300 caracteres)" cols="120" rows="10"
-              maxlength="300"></textarea>
-          </div>
+              maxlength="300"></textarea> 
+          
+            </div>
           <div>
             <input class="btn btn-primary" type="submit" value="Enviar">
             <input class="btn btn-primary" type="reset" value="Borrar">
@@ -73,6 +75,7 @@
         </form>
       </div>
     </body>
+  
   </main>
   <footer>
     <div class="contenedor-footer">
@@ -108,18 +111,6 @@
     var email = document.getElementById("email_ingresado").value.trim();
     var celular = document.getElementById("celular_ingresado").value.trim();
     var comentario = document.getElementById("comentario_ingresado").value.trim();
-
-    // Verificar que el mail no esté vacio
-    let correo = document.querySelector("#email_ingresado").value
-    alert("Email ingresado", correo);
-    if (correo === "") {
-      alert("Necesitamos su dirección de email");
-      return false;
-    }
-
-
-    // var dni = document.getElementById("dni").value.trim();
-    // var direccion = document.getElementById("direccion").value.trim();
 
     // VALIDA QUE SE INGRESEN TODOS LOS CAMPOS: Verifica si algún campo está en blanco
     if (nombre === "" || apellido === "" || email === "" || celular === "" || Comentario === "") {

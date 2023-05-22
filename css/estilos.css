@@ -443,11 +443,9 @@ footer {
     width: 100%;
 }
 
-.textarea {
-    float: left;
-    width: 100%;
-    min-height: 75px;
-    outline: none;
-    resize: none;
-    border: 1px solid grey;
+.titulo-Consulta {
+    color: #642a73;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
 }
