@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 
@@ -26,15 +27,17 @@
       <a href="contacto.html">Contacto</a>
     </nav>
     <section class="textos-header">
-      <h1>Perdiste tu mascota?</h1>
-      <h2>Te ayudamos a encontrarla</h2>
+        <h1>Perdiste tu mascota?</h1>
+        <h2>Te ayudamos a encontrarla</h2>
     </section>
-    <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
-        style="height: 100%; width: 100%;">
-        <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
-          style="stroke: none; fill: #fff;"></path>
-      </svg></div>
-  </header>
+    <div class="wave" style="height: 150px; overflow: hidden;">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+            <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                style="stroke: none; fill: #fff;">
+            </path>
+        </svg>
+    </div>
+</header>
   <main>
 
     <body>
@@ -51,7 +54,7 @@
             <div class="form-check">
               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
               <label class="form-check-label" for="flexRadioDefault2">
-                Mascota Encotrada
+                Mascota Encontrada
               </label>
             </div>
           </div>
@@ -201,23 +204,24 @@
     }
 
     // Verificar seleccion de barrio
-    let lugar = document.getElementById("dateSelect").value;
+    let lugar= document.getElementById("dateSelect").value;
     if (lugar == "Seleccionar el Barrio") {
       alert("Debe seleccionar un barrio");
       return false;
     }
 
     // Verificar ingreso de fecha
-    let fecha = document.getElementById("dateInput").value;
+    let fecha= document.getElementById("dateInput").value;
     esFecha = Date.parse(fecha)
     if (isNaN(esFecha)) {
       alert("Debe ingresar la fecha del evento");
       return false;
     }
 
-    return true;
+  return true;
 
   }
 </script>
 
+>>>>>>> 002c18e82a95bac39f38171a312eca8c628716cf
 </html>

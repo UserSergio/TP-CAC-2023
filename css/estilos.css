@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +29,7 @@ body {
     justify-content: center;
 }
 
-.contenedor-grid>div {
+.contenedor-grid > div {
     height: 300px;
     display: flex;
     justify-content: center;
@@ -40,8 +41,8 @@ body {
 
 }
 
-.contenedor-grid>div>img {
-    width: 100%;
+.contenedor-grid > div > img {
+    width: 100% ;
     height: 90%;
     object-fit: cover;
 }
@@ -349,7 +350,7 @@ footer {
     nav {
         display: flex;
         flex-direction: column;
-
+              
         text-align: right;
     }
 
@@ -378,7 +379,7 @@ footer {
     /* Galeria Sponsors */
     .imagen-sponsors {
         width: 95%;
-
+               
     }
 
     /* Que dicen */
@@ -423,29 +424,20 @@ footer {
         font-size: 20px;
     }
 }
-
 .video-inf {
-
+    
     height: 0;
-    overflow: hidden;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
     /* margin-left: 5%;
     margin-right: 5%; */
     position: relative;
 }
-
 .video-inf iframe {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-
-.titulo-Consulta {
-    color: #642a73;
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 60px;
-}
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	}
