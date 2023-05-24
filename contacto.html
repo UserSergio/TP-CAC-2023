@@ -18,28 +18,26 @@
 <body>
   <header>
     <nav>
-        <a href="index.html">Inicio</a>
-        <a href="encontradas.html">Ver Mascotas</a>
-        <!-- <a href="perdidas.html">Perdidas</a> -->
-        <a href="perdi_mi_mascota.html">Reportar Mascota</a>
-        <a href="consejos.html">Consejos</a>
-        <a href="FAQ.html">FAQs</a>
-        <a href="contacto.html">Contacto</a>
+      <a href="index.html">Inicio</a>
+      <a href="encontradas.html">Ver Mascotas</a>
+      <a href="perdi_mi_mascota.html">Reportar Mascota</a>
+      <a href="consejos.html">Consejos</a>
+      <a href="FAQ.html">FAQs</a>
+      <a href="contacto.html">Contacto</a>
     </nav>
     <section class="textos-header">
-        <h1>Perdiste tu mascota?</h1>
-        <h2>Te ayudamos a encontrarla</h2>
+      <h1>Perdiste tu mascota?</h1>
+      <h2>Te ayudamos a encontrarla</h2>
     </section>
-    <div class="wave" style="height: 150px; overflow: hidden;">
-        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-            <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
-                style="stroke: none; fill: #fff;">
-            </path>
-        </svg>
-    </div>
-</header>
-<main>
-    <h2 class="titulo">Contacto</h2>
+    <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+        style="height: 100%; width: 100%;">
+        <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+          style="stroke: none; fill: #fff;"></path>
+      </svg></div>
+  </header>
+  <main>
+    
+    <h2 class="titulo-Consulta">Contactos</h2>
     <body>
       <div class="container">
         <form class="row g-3 mt-3 pb-5" onsubmit="return validarFormulario()">
@@ -65,7 +63,7 @@
 
           <div class="col-12">
             <label for="mensaje_ingresado" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="mensaje_ingresado"
+            <textarea class="form-control" name="comentario_ingresado" id="comentario"
               placeholder="Ingrese su comentario (Máximo 300 caracteres)" cols="120" rows="10"
               maxlength="300"></textarea> 
           
@@ -106,14 +104,16 @@
     // Obtener los valores ingresados por el usuario y .trim() recorta
     // los posibles espacios en blanco al principio y al final.
 
-    let nombre = document.getElementById("nombre_ingresado").value;
-    let apellido = document.getElementById("apellido_ingresado").value;
-    let email = document.getElementById("email_ingresado").value;
-    let celular = document.getElementById("telefono_ingresado").value;
-    let comentario = document.getElementById("mensaje_ingresado").value;
+
+
+    var nombre = document.getElementById("nombre_ingresado").value.trim();
+    var apellido = document.getElementById("apellido_ingresado").value.trim();
+    var email = document.getElementById("email_ingresado").value.trim();
+    var celular = document.getElementById("celular_ingresado").value.trim();
+    var comentario = document.getElementById("comentario_ingresado").value.trim();
 
     // VALIDA QUE SE INGRESEN TODOS LOS CAMPOS: Verifica si algún campo está en blanco
-    if (nombre === "" || apellido === "" || email === "" || celular === "" || comentario === "") {
+    if (nombre === "" || apellido === "" || email === "" || celular === "" || Comentario === "") {
       alert("Por favor, complete todos los campos del formulario.");
       return false;
     }
@@ -122,25 +122,24 @@
     for (var i = 0; i < nombre.length; i++) {
       var charCode = nombre.charCodeAt(i);
       if (!((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode === 32)) {
-        alert("El campo 'nombre' solo puede contener caracteres alfabéticos y espacios.");
+        alert("El campo 'nombre' solo puede contener caracteres alfabéticos y espacios en blanco.");
         return false;
-       }
-     }
-
-     // VALIDA Apellido: Verifica si el Apellido contiene solo caracteres alfabéticos y espacios
+      }
+    }
+    // VALIDA Apellido: Verifica si el Apellido contiene solo caracteres alfabéticos y espacios
     for (var i = 0; i < apellido.length; i++) {
       var charCode = apellido.charCodeAt(i);
       if (!((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode === 32)) {
-        alert("El campo 'apellido' solo puede contener caracteres alfabéticos y espacios en blanco.");
+        alert("El campo 'nombre' solo puede contener caracteres alfabéticos y espacios en blanco.");
         return false;
       }
     }
 
     // VALIDA Celular: Verifica que solo se ingresen nros
-     for (var i = 0; i < celular.length; i++) {
-      var charCode = celular.charCodeAt(i);
-      if (charCode < 48  || charCode > 57) {
-        alert("El campo 'celular' solo puede contener numeros.");
+    for (var j = 0; j < celular.length; j++) {
+      var digit = celular.charAt(j);
+      if (digit < "0" || digit > "9") {
+        alert("El campo 'Celular' debe contener solo números.");
         return false;
       }
     }
@@ -148,7 +147,7 @@
     // Si todas las validaciones son exitosas, enviar el formulario
     alert("Formulario enviado correctamente.");
     return true;
-   }
+  }
 </script>
 
 </html>

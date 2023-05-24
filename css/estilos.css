@@ -3,9 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-h2{
+
+h2 {
     margin-top: 40px;
 }
+
 body {
     font-family: Arial, Helvetica, sans-serif !important;
 
@@ -21,7 +23,7 @@ body {
 
 .contenedor-grid {
     display: grid;
-    grid-template-columns:repeat(auto-fit, minmax(300px, 0.6fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 0.6fr));
     grid-gap: 10px;
     justify-content: center;
 }
