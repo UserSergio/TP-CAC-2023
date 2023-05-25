@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/2ac95bdd5f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="encontradas.html">Ver Mascotas</a>
+        <!-- <a href="perdidas.html">Perdidas</a> -->
+        <a href="perdi_mi_mascota.html">Reportar Mascota</a>
+        <a href="consejos.html">Consejos</a>
+        <a href="FAQ.html">FAQs</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+    <section class="textos-header">
+        <h1>Perdiste tu mascota?</h1>
+        <h2>Te ayudamos a encontrarla</h2>
+    </section>
+    <div class="wave" style="height: 150px; overflow: hidden;">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+            <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                style="stroke: none; fill: #fff;">
+            </path>
+        </svg>
+    </div>
+</header>
+<main>
+    <h2 class="titulo">Contacto</h2>
+    <body>
+      <div class="container">
+        <form class="row g-3 mt-3 pb-5" onsubmit="return validarFormulario()">
+
+          <div class="col-6">
+            <label for="nombre_ingresado" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre_ingresado" placeholder="Ingrese su nombre">
+          </div>
+          <div class="col-6">
+            <label for="apellido_ingresado" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="apellido_ingresado" placeholder="Ingrese su apellido">
+          </div>
+
+          <div class="col-6">
+            <label for="email_ingresado" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email_ingresado" placeholder="ejemplo@dominio">
+          </div>
+
+          <div class="col-6">
+            <label for="telefono_ingresado" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" id="telefono_ingresado" placeholder="Ingrese su teléfono">
+          </div>
+
+          <div class="col-12">
+            <label for="mensaje_ingresado" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje_ingresado"
+              placeholder="Ingrese su comentario (Máximo 300 caracteres)" cols="120" rows="10"
+              maxlength="300"></textarea> 
+          
+            </div>
+          <div>
+            <input class="btn btn-primary" type="submit" value="Enviar">
+            <input class="btn btn-primary" type="reset" value="Borrar">
+          </div>
+        </form>
+      </div>
+    </body>
+  
+  </main>
+  <footer>
+    <div class="contenedor-footer">
+      <div class="content-foo">
+        <h4>Telefono</h4>
+        <i class="fa fa-duotone fa-phone"></i>
+        <p>1234567890</p>
+      </div>
+      <div class="content-foo">
+        <h4>email</h4>
+        <i class="fa-regular fa-envelope"></i>
+        <p>mascotas.perdidas@gmail.com</p>
+      </div>
+      <div class="content-foo">
+        <h4>Direccion</h4>
+        <i class="fa-sharp fa-solid fa-location-dot"></i>
+        <p>Av.Las Mascotas 2222 - CABA</p>
+      </div>
+    </div>
+    <h2 class="titulo-final">&copy; Grupo 12 CaC 2023</h2>
+  </footer>
+</body>
+
+<script>
+  function validarFormulario() {
+    // Obtener los valores ingresados por el usuario y .trim() recorta
+    // los posibles espacios en blanco al principio y al final.
+
+    let nombre = document.getElementById("nombre_ingresado").value;
+    let apellido = document.getElementById("apellido_ingresado").value;
+    let email = document.getElementById("email_ingresado").value;
+    let celular = document.getElementById("telefono_ingresado").value;
+    let comentario = document.getElementById("mensaje_ingresado").value;
+
+    // VALIDA QUE SE INGRESEN TODOS LOS CAMPOS: Verifica si algún campo está en blanco
+    if (nombre === "" || apellido === "" || email === "" || celular === "" || comentario === "") {
+      alert("Por favor, complete todos los campos del formulario.");
+      return false;
+    }
+
+    // VALIDA Nombre: Verifica si el nombre contiene solo caracteres alfabéticos y espacios
+    for (var i = 0; i < nombre.length; i++) {
+      var charCode = nombre.charCodeAt(i);
+      if (!((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode === 32)) {
+        alert("El campo 'nombre' solo puede contener caracteres alfabéticos y espacios.");
+        return false;
+       }
+     }
+
+     // VALIDA Apellido: Verifica si el Apellido contiene solo caracteres alfabéticos y espacios
+    for (var i = 0; i < apellido.length; i++) {
+      var charCode = apellido.charCodeAt(i);
+      if (!((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode === 32)) {
+        alert("El campo 'apellido' solo puede contener caracteres alfabéticos y espacios en blanco.");
+        return false;
+      }
+    }
+
+    // VALIDA Celular: Verifica que solo se ingresen nros
+     for (var i = 0; i < celular.length; i++) {
+      var charCode = celular.charCodeAt(i);
+      if (charCode < 48  || charCode > 57) {
+        alert("El campo 'celular' solo puede contener numeros.");
+        return false;
+      }
+    }
+
+    // Si todas las validaciones son exitosas, enviar el formulario
+    alert("Formulario enviado correctamente.");
+    return true;
+   }
+</script>
+
+</html>
