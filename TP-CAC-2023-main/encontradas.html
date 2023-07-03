@@ -35,81 +35,29 @@
     </div>
 </header>
   <main>
-    <section class="mascotas-encontradas">
+    <section id="app" class="mascotas-encontradas">
       <h2 class="titulo">Mascotas Encontradas</h2>
       <div class="contenedor-grid">
-        <div class="imagen-encontradas">
-          <img src="img/perro01c.jpg" alt="" />
-          <p>La Boca - 02/10/2022 09:30AM</p>
-        </div>
-        <div class="imagen-encontradas">
-          <img src="img/perro02c.jpg" alt="" />
-          <p>Villa Urquiza - 05/11/2022 10:50PM</p>
-        </div>
-        <div class="imagen-encontradas">
-          <img src="img/perro03c.jpg" alt="" />
-          <p>Boedo - 10/11/2022 11:30AM</p>
-        </div>
-        <div class="imagen-encontradas">
-          <img src="img/perro04c.jpg" alt="" />
-          <p>Nuñez - 22/10/2022 10:00PM</p>
-        </div>
-        <div class="imagen-encontradas">
-          <img src="img/perro06c.jpg" alt="" />
-          <p>Recoleta - 03/02/2023 07:25PM</p>
-
-        </div>
-        <div class="imagen-encontradas">
-          <img src="img/perro07c.jpg" alt="" />
-          <p>La Paternal - 10/01/2023 03:10PM</p>
-
-        </div>
-        <div class="imagen-encontradas">
-          <img src="img/perro08c.jpg" alt="" />
-          <p>Saavedra - 02/10/2023 05:20PM</p>
-
-        </div>
-        <div class="imagen-encontradas">
-          <img src="img/perro09c.jpg" alt="" />
-          <p>Villa Devoto - 22/03/2023 08:30AM</p>
-        </div>
-        
-
+        <template v-for="producto in productos">
+          <template v-if="producto.estado=='Encontrada'">
+            <div class="imagen-encontradas">
+              <img :src="producto.imagen" :alt="">
+              <p>{{producto.barrio}} {{producto.fecha}}</p>
+            </div>
+          </template>          
+        </template>
       </div>
+
       <h2 class="titulo">Mascotas Perdidas</h2>
       <div class="contenedor-grid">
-        <div class="imagen-encontradas">
-          <img src="img/perro01d.jpg" alt="" />
-          <p>Constitucion - 02/10/2022 09:30AM</p>
-        </div>
-        <div class="imagen-encontradas">
-          <img src="img/perro02d.jpg" alt="" />
-          <p>Villa Santa Rita - 05/11/2022 10:50PM</p>
-        </div>
-        <div class="imagen-encontradas">
-          <img src="img/perro03d.jpg" alt="" />
-          <p>Villa Ortuzar - 22/10/2022 10:00PM</p>
-        </div>
-        <div class="imagen-encontradas">
-          <img src="img/perro04d.jpg" alt="" />
-          <p>Villa Santa Rita - 10/01/2023 03:10PM</p>
-        </div>
-        <div class="imagen-encontradas">
-          <img src="img/perro05d.jpg" alt="" />
-          <p>Agronomia - 10/11/2022 11:30AM </p>
-        </div>
-        <div class="imagen-encontradas">
-          <img src="img/perro06d.jpg" alt="" />
-          <p>Villa Crespo - 02/10/2023 05:20PM</p>
-        </div>
-        <div class="imagen-encontradas">
-          <img src="img/perro07d.jpg" alt="" />
-          <p>Balvanera - 22/03/2023 08:30AM</p>
-        </div>
-        <div class="imagen-encontradas">
-          <img src="img/perro08d.jpg" alt="" />
-          <p>Villa Crespo - 02/10/2023 05:20PM</p>
-        </div>
+        <template v-for="producto in productos">
+          <template v-if="producto.estado=='Perdida'">
+            <div class="imagen-encontradas">
+              <img :src="producto.imagen" :alt="">
+              <p>{{producto.barrio}} {{producto.fecha}}</p>
+            </div>
+          </template>          
+        </template>
       </div>
     </section>
   </main>
@@ -135,4 +83,6 @@
   </footer>
 </body>
 
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="./js/encontradas.js"> </script>
 </html>
